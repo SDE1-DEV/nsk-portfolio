@@ -81,6 +81,7 @@ const ParticleField = () => {
           args={[positions, 3]}
         />
       </bufferGeometry>
+      {/* @ts-ignore - R3F typing issue */}
       <pointsMaterial
         size={0.03}
         color="#00d4ff"
