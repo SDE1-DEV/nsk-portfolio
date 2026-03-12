@@ -1,7 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRef, useMemo } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useFrame, useThree, extend } from "@react-three/fiber";
 import * as THREE from "three";
+
+// Extend to register materials properly
+extend({
+  MeshStandardMaterial: THREE.MeshStandardMaterial,
+  PointsMaterial: THREE.PointsMaterial,
+});
 
 const FloatingShape = ({
   position,
@@ -17,6 +22,7 @@ const FloatingShape = ({
   scale: number;
 }) => {
   const meshRef = useRef<THREE.Mesh>(null!);
+  const matRef = useRef<THREE.MeshStandardMaterial>(null!);
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
@@ -37,18 +43,20 @@ const FloatingShape = ({
     }
   }, [geometry]);
 
+  const mat = useMemo(() => {
+    return new THREE.MeshStandardMaterial({
+      color,
+      transparent: true,
+      opacity: 0.12,
+      wireframe: true,
+      roughness: 0.2,
+      metalness: 0.8,
+    });
+  }, [color]);
+
   return (
-    <mesh ref={meshRef} position={position} scale={scale}>
+    <mesh ref={meshRef} position={position} scale={scale} material={mat}>
       {geo}
-      {/* @ts-ignore - R3F typing issue */}
-      <meshStandardMaterial
-        color={color}
-        transparent
-        opacity={0.12}
-        wireframe
-        roughness={0.2}
-        metalness={0.8}
-      />
     </mesh>
   );
 };
@@ -67,6 +75,16 @@ const ParticleField = () => {
     return [pos];
   }, []);
 
+  const pointsMat = useMemo(() => {
+    return new THREE.PointsMaterial({
+      size: 0.03,
+      color: "#00d4ff",
+      transparent: true,
+      opacity: 0.4,
+      sizeAttenuation: true,
+    });
+  }, []);
+
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     pointsRef.current.rotation.y = t * 0.02;
@@ -74,21 +92,13 @@ const ParticleField = () => {
   });
 
   return (
-    <points ref={pointsRef}>
+    <points ref={pointsRef} material={pointsMat}>
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
           args={[positions, 3]}
         />
       </bufferGeometry>
-      {/* @ts-ignore - R3F typing issue */}
-      <pointsMaterial
-        size={0.03}
-        color="#00d4ff"
-        transparent
-        opacity={0.4}
-        sizeAttenuation
-      />
     </points>
   );
 };
