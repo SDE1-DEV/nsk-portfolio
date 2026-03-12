@@ -40,6 +40,7 @@ const FloatingShape = ({
   return (
     <mesh ref={meshRef} position={position} scale={scale}>
       {geo}
+      {/* @ts-ignore - R3F typing issue */}
       <meshStandardMaterial
         color={color}
         transparent
