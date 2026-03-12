@@ -2,7 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import { HiMail, HiPhone } from "react-icons/hi";
-import { SiLinkedin, SiInstagram, SiGithub } from "react-icons/si";
+import { SiLinkedin as SiLinkedinIcon, SiInstagram, SiGithub } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa";
 
 const socials = [
   { icon: SiLinkedin, url: "https://www.linkedin.com/in/bathula-naga-sai-kiran", label: "LinkedIn" },

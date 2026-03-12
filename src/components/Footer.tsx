@@ -1,5 +1,6 @@
 import { HiArrowUp } from "react-icons/hi";
-import { SiLinkedin, SiInstagram, SiGithub } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa";
+import { SiInstagram, SiGithub } from "react-icons/si";
 
 const Footer = () => (
   <footer className="border-t border-border py-12 px-4">
