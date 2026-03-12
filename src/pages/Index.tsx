@@ -1,4 +1,4 @@
-import ParticleBackground from "@/components/ParticleBackground";
+import AntigravityScene from "@/components/AntigravityScene";
 import Navbar from "@/components/Navbar";
 import ScrollProgress from "@/components/ScrollProgress";
 import HeroSection from "@/components/HeroSection";
@@ -16,7 +16,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
-      <ParticleBackground />
+      <AntigravityScene />
       <ScrollProgress />
       <Navbar />
       <HeroSection />
