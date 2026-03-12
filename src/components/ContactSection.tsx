@@ -2,11 +2,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import { HiMail, HiPhone } from "react-icons/hi";
-import { SiLinkedin as SiLinkedinIcon, SiInstagram, SiGithub } from "react-icons/si";
+import { SiInstagram, SiGithub } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa";
 
 const socials = [
-  { icon: SiLinkedin, url: "https://www.linkedin.com/in/bathula-naga-sai-kiran", label: "LinkedIn" },
+  { icon: FaLinkedinIn, url: "https://www.linkedin.com/in/bathula-naga-sai-kiran", label: "LinkedIn" },
   { icon: SiInstagram, url: "https://www.instagram.com/vibe.techie", label: "Instagram" },
   { icon: SiGithub, url: "https://github.com/DEV-NSK", label: "GitHub" },
 ];
