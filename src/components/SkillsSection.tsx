@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
-import { SiHtml5, SiCss3 as SiCssIcon, SiJavascript, SiReact, SiNodedotjs, SiExpress, SiGithub, SiVercel, SiFirebase } from "react-icons/si";
+import { SiHtml5, SiJavascript, SiReact, SiNodedotjs, SiExpress, SiGithub, SiVercel, SiFirebase } from "react-icons/si";
 import { FaCss3Alt } from "react-icons/fa";
 import { HiCog, HiChip, HiChat, HiLink } from "react-icons/hi";
 
