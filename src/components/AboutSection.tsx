@@ -19,9 +19,11 @@ const AboutSection = () => (
           whileHover={{ scale: 1.02 }}
           className="w-64 h-64 md:w-80 md:h-80 rounded-3xl glass glow-border overflow-hidden relative"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-            <span className="text-7xl font-display font-bold gradient-text">NSK</span>
-          </div>
+          <img 
+            src="/profile.jpg" 
+            alt="Naga Sai Kiran" 
+            className="w-full h-full object-cover"
+          />
         </motion.div>
         {floatingIcons.map(({ Icon, delay, x, y }, i) => (
           <motion.div

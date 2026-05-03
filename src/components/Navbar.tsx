@@ -31,8 +31,10 @@ const Navbar = () => {
         }`}
       >
         <div className="flex items-center gap-8">
-          <a href="#" className="font-display text-lg font-bold gradient-text-primary">
-            NSK
+          <a href="#" className="flex items-center group">
+            <div className="w-10 h-10 rounded-full overflow-hidden border border-primary/20 group-hover:border-primary/50 transition-all duration-300 group-hover:scale-110">
+              <img src="/profile.jpg" alt="Logo" className="w-full h-full object-cover" />
+            </div>
           </a>
           <div className="hidden md:flex items-center gap-6">
             {links.map((l) => (
